@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : lua
-Version  : 5.4.3
-Release  : 66
-URL      : https://www.lua.org/ftp/lua-5.4.3.tar.gz
-Source0  : https://www.lua.org/ftp/lua-5.4.3.tar.gz
+Version  : 5.4.4
+Release  : 67
+URL      : https://www.lua.org/ftp/lua-5.4.4.tar.gz
+Source0  : https://www.lua.org/ftp/lua-5.4.4.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -21,7 +21,7 @@ Patch2: 0002-Add-scimark-as-PGO-profiling-workload.patch
 Patch3: 0003-Add-option-for-pgo-profiling-test-with-scimark.patch
 
 %description
-This is Lua 5.4.3, released on 15 Mar 2021.
+This is Lua 5.4.4, released on 13 Jan 2022.
 For installation instructions, license details, and
 further information about Lua, see doc/readme.html.
 
@@ -71,8 +71,8 @@ staticdev components for the lua package.
 
 
 %prep
-%setup -q -n lua-5.4.3
-cd %{_builddir}/lua-5.4.3
+%setup -q -n lua-5.4.4
+cd %{_builddir}/lua-5.4.4
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1617649082
+export SOURCE_DATE_EPOCH=1643397214
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export FCFLAGS="$FFLAGS -O3 -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
@@ -115,7 +115,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make test
 
 %install
-export SOURCE_DATE_EPOCH=1617649082
+export SOURCE_DATE_EPOCH=1643397214
 rm -rf %{buildroot}
 %make_install INSTALL_TOP=%{buildroot}/usr/
 
@@ -140,7 +140,7 @@ rm -rf %{buildroot}
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/liblua.so.5.4
-/usr/lib64/liblua.so.5.4.3
+/usr/lib64/liblua.so.5.4.4
 
 %files man
 %defattr(0644,root,root,0755)
