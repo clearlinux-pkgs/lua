@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : lua
 Version  : 5.4.4
-Release  : 67
+Release  : 68
 URL      : https://www.lua.org/ftp/lua-5.4.4.tar.gz
 Source0  : https://www.lua.org/ftp/lua-5.4.4.tar.gz
 Summary  : No detailed summary available
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1643397214
+export SOURCE_DATE_EPOCH=1667413574
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
 export FCFLAGS="$FFLAGS -O3 -fno-lto -fstack-protector-strong -fzero-call-used-regs=used "
@@ -115,7 +115,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make test
 
 %install
-export SOURCE_DATE_EPOCH=1643397214
+export SOURCE_DATE_EPOCH=1667413574
 rm -rf %{buildroot}
 %make_install INSTALL_TOP=%{buildroot}/usr/
 
