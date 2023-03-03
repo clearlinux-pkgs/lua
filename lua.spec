@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : lua
 Version  : 5.4.4
-Release  : 68
+Release  : 69
 URL      : https://www.lua.org/ftp/lua-5.4.4.tar.gz
 Source0  : https://www.lua.org/ftp/lua-5.4.4.tar.gz
 Summary  : No detailed summary available
