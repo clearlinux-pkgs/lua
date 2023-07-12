@@ -5,10 +5,10 @@
 #
 %define keepstatic 1
 Name     : lua
-Version  : 5.4.4
-Release  : 70
-URL      : https://www.lua.org/ftp/lua-5.4.4.tar.gz
-Source0  : https://www.lua.org/ftp/lua-5.4.4.tar.gz
+Version  : 5.4.6
+Release  : 71
+URL      : https://www.lua.org/ftp/lua-5.4.6.tar.gz
+Source0  : https://www.lua.org/ftp/lua-5.4.6.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -25,7 +25,7 @@ Patch2: 0002-Add-scimark-as-PGO-profiling-workload.patch
 Patch3: 0003-Add-option-for-pgo-profiling-test-with-scimark.patch
 
 %description
-This is Lua 5.4.4, released on 13 Jan 2022.
+This is Lua 5.4.6, released on 02 May 2023.
 For installation instructions, license details, and
 further information about Lua, see doc/readme.html.
 
@@ -75,8 +75,8 @@ staticdev components for the lua package.
 
 
 %prep
-%setup -q -n lua-5.4.4
-cd %{_builddir}/lua-5.4.4
+%setup -q -n lua-5.4.6
+cd %{_builddir}/lua-5.4.6
 %patch -P 1 -p1
 %patch -P 2 -p1
 %patch -P 3 -p1
@@ -86,7 +86,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685577494
+export SOURCE_DATE_EPOCH=1689123805
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -119,7 +119,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make test
 
 %install
-export SOURCE_DATE_EPOCH=1685577494
+export SOURCE_DATE_EPOCH=1689123805
 rm -rf %{buildroot}
 %make_install INSTALL_TOP=%{buildroot}/usr/
 
@@ -144,7 +144,7 @@ rm -rf %{buildroot}
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/liblua.so.5.4
-/usr/lib64/liblua.so.5.4.4
+/usr/lib64/liblua.so.5.4.6
 
 %files man
 %defattr(0644,root,root,0755)
