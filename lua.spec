@@ -6,7 +6,7 @@
 %define keepstatic 1
 Name     : lua
 Version  : 5.4.6
-Release  : 71
+Release  : 72
 URL      : https://www.lua.org/ftp/lua-5.4.6.tar.gz
 Source0  : https://www.lua.org/ftp/lua-5.4.6.tar.gz
 Summary  : No detailed summary available
@@ -86,7 +86,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689123805
+export SOURCE_DATE_EPOCH=1689832024
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -119,7 +119,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make test
 
 %install
-export SOURCE_DATE_EPOCH=1689123805
+export SOURCE_DATE_EPOCH=1689832024
 rm -rf %{buildroot}
 %make_install INSTALL_TOP=%{buildroot}/usr/
 
