@@ -51,6 +51,7 @@ liblua.so.5.4:lua_callk
 liblua.so.5.4:lua_checkstack
 liblua.so.5.4:lua_close
 liblua.so.5.4:lua_closeslot
+liblua.so.5.4:lua_closethread
 liblua.so.5.4:lua_compare
 liblua.so.5.4:lua_concat
 liblua.so.5.4:lua_copy

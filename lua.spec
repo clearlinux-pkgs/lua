@@ -7,10 +7,10 @@
 #
 %define keepstatic 1
 Name     : lua
-Version  : 5.4.4
-Release  : 73
-URL      : https://www.lua.org/ftp/lua-5.4.4.tar.gz
-Source0  : https://www.lua.org/ftp/lua-5.4.4.tar.gz
+Version  : 5.4.6
+Release  : 74
+URL      : https://www.lua.org/ftp/lua-5.4.6.tar.gz
+Source0  : https://www.lua.org/ftp/lua-5.4.6.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -27,7 +27,7 @@ Patch2: 0002-Add-scimark-as-PGO-profiling-workload.patch
 Patch3: 0003-Add-option-for-pgo-profiling-test-with-scimark.patch
 
 %description
-This is Lua 5.4.4, released on 13 Jan 2022.
+This is Lua 5.4.6, released on 02 May 2023.
 For installation instructions, license details, and
 further information about Lua, see doc/readme.html.
 
@@ -77,13 +77,13 @@ staticdev components for the lua package.
 
 
 %prep
-%setup -q -n lua-5.4.4
-cd %{_builddir}/lua-5.4.4
+%setup -q -n lua-5.4.6
+cd %{_builddir}/lua-5.4.6
 %patch -P 1 -p1
 %patch -P 2 -p1
 %patch -P 3 -p1
 pushd ..
-cp -a lua-5.4.4 buildavx2
+cp -a lua-5.4.6 buildavx2
 popd
 
 %build
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1703178856
+export SOURCE_DATE_EPOCH=1703181258
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x4000 -march=westmere"
@@ -168,7 +168,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1703178856
+export SOURCE_DATE_EPOCH=1703181258
 rm -rf %{buildroot}
 pushd ../buildavx2/
 %make_install_v3 INSTALL_TOP=%{buildroot}/usr/
@@ -197,7 +197,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/liblua.so.5.4
-/usr/lib64/liblua.so.5.4.4
+/usr/lib64/liblua.so.5.4.6
 
 %files man
 %defattr(0644,root,root,0755)
