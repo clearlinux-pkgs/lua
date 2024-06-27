@@ -1,0 +1,3 @@
+Whenever major or minor version bumps occur:
+ - rebuild rrdtool
+ - update lpeg's patch to change the lua version and rebuild
